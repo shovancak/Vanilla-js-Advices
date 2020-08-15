@@ -65,13 +65,21 @@ button {
 }
 
 button:hover {
-  background-color: #c9e6e3;
+  background-color: #cfedea;
   border: 1px solid black;
 }
 
 button:active {
   transform: translate(0, 0.3rem);
   box-shadow: none;
+}
+
+#new-advice {
+  margin-right: 20px;
+}
+
+.twitter-button {
+  margin-left: 20px;
 }
 
 .twitter-button:hover {
