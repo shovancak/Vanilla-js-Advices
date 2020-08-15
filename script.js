@@ -3,19 +3,34 @@ const adviceElement = document.getElementById("advice");
 const authorElement = document.getElementById("author");
 const twitterElement = document.getElementById("twitter");
 const newAdviceElement = document.getElementById("new-advice");
+const loaderElement = document.getElementById("loader");
+const textWrapperElement = document.getElementById("text-wrapper");
+
+const loading = () => {
+  loaderElement.hidden = false;
+  textWrapperElement.hidden = true;
+};
+
+const hideLoading = () => {
+  loaderElement.hidden = true;
+  textWrapperElement.hidden = false;
+};
 
 const getAdvice = async () => {
+  loading();
   const adviceApiUrl = "https://api.adviceslip.com/advice";
   try {
     const response = await fetch(adviceApiUrl);
     const data = await response.json();
     const advice = data.slip.advice;
-    adviceElement.innerText = advice;
     if (advice.length > 125) {
       adviceElement.classList.add("long-advice");
     } else {
       adviceElement.classList.remove("long-advice");
     }
+
+    adviceElement.innerText = advice;
+    hideLoading();
   } catch (error) {
     console.log("Something went wrong. Error: ", error);
   }
