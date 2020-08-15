@@ -42,7 +42,7 @@ const getAuthor = async () => {
     const response = await fetch(authorApiUrl);
     const data = await response.json();
     const author = data.results[0].name.first;
-    authorElement.innerText = author;
+    authorElement.innerText = `- ${author}`;
   } catch (error) {
     console.log("Something went wrong. Error: ", error);
   }
