@@ -80,10 +80,12 @@ button:active {
 
 #new-advice {
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 .twitter-button {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .twitter-button:hover {
@@ -92,6 +94,26 @@ button:active {
 
 .fa-twitter-square {
   font-size: 1.6rem;
+}
+
+.loader {
+  border: 16px solid white; /* Light grey */
+  border-top: 16px solid #888888; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 1000px) {
