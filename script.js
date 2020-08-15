@@ -33,5 +33,16 @@ const getAuthor = async () => {
   }
 };
 
+const tweetAdvice = () => {
+  const advice = `"${adviceElement.innerText}"`;
+  const author = authorElement.innerText;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${advice} - ${author}`;
+  window.open(twitterUrl, "_blank");
+};
+
+newAdviceElement.addEventListener("click", getAdvice);
+newAdviceElement.addEventListener("click", getAuthor);
+twitterElement.addEventListener("click", tweetAdvice);
+
 getAdvice();
 getAuthor();
